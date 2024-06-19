@@ -1,0 +1,86 @@
+/* CSS RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Main Layout */
+body{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr ;
+    background-color: rgb(248,249,250);
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+    background-color: rgb(248,249,250);
+}
+    form#booksubmissions{
+        width: 20rem;
+        display: none;
+        width: 20rem;
+
+    }
+        h2#formHead{
+            text-align: center;
+        }
+            .form-switch{
+                display: inline-block;
+            }
+            
+                span#NotReadLabel{
+                    width: max-content;
+                }
+                    .cta-btn{
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                    }
+
+
+.grid-books{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+    margin: auto;
+    background-color: rgb(248,249,250);
+    column-gap: 10rem;
+}
+    .card > * {
+        font-size: 1rem!important;
+    }
+    
+        .card{
+        animation: fadeIn 1s ease-in-out;
+        max-height: max-content;
+        max-width: max-content;
+        padding: 4rem;
+        justify-content: center;
+        align-items: center;
+        border-left: 10px solid rgb(48, 46, 45);
+        box-shadow: 8px 3px rgb(219, 230, 210), 11px 6px #000000, 12px 7px 0px #000000, 14px 9px 0px #000000;
+        }
+            .remove{
+                background-color: red;
+            }
+                .toggle{
+                    font-size: 0.75rem!important;
+                    margin-top: 10px;
+                    outline:0;
+                    border: none;
+                    background-color: green;
+                    color: white;
+                    padding: 10px;
+                    border-radius: 8px;
+                }
+                .card:hover{
+                background-color: rgba(152, 152, 158, .9)!important;
+                scale: 1.03;
+                 }
+                
