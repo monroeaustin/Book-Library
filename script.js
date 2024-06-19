@@ -14,6 +14,7 @@ let entireForm = document.querySelector('form#booksubmissions');
 let removeButtons = document.querySelectorAll('.remove');
 // Document Sync End
 
+
 function createBookonScreen(author,title,pageCount,readStatus){
 let bottomGrid = document.querySelector(".grid-books");
 let newDiv = document.createElement("div");
@@ -85,13 +86,35 @@ for (let i = 0; i < myLibrary.length; i++) {
         oneParentUp.parentNode.parentNode.removeChild(oneParentUp.parentNode);
     })
 
-}
 
+
+    }
+
+    function validateData(author, title, pageCount) {
+        if (author === "" || title === "" || pageCount === "") {
+            return false;
+        } else {
+            console.log(author);
+            return true;
+        }
+    }
+    
 function addBookToLibrary(author,title,pageCount,readStatus){
 
-    let bookAlias = new book(author,title,pageCount,readStatus);
+    if (validateData(author,title,pageCount) === true )  {
+        let bookAlias = new book(author,title,pageCount,readStatus);
     myLibrary.push(bookAlias);
 createBookonScreen(author,title,pageCount,readStatus);
+    }  
+    else {
+        let insertBeforeItem = document.querySelector(".cta-btn")
+        let alertDiv = document.createElement("div");
+        let parentDiv = document.querySelector('form');
+        alertDiv.setAttribute("class", "alert alert-danger");
+        alertDiv.setAttribute("role", "alert");
+        alertDiv.innerText = "Please enter the missing fields."
+        parentDiv.insertBefore(alertDiv,insertBeforeItem)
+    }
  }
 
 
